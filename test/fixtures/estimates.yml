@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  service_id: 1
+  plan_id: 1
+  client_name: MyString
+  client_lastname: MyString
+  client_phone: MyString
+  client_email: MyString
+
+two:
+  service_id: 1
+  plan_id: 1
+  client_name: MyString
+  client_lastname: MyString
+  client_phone: MyString
+  client_email: MyString

@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  feretro: 1
+  velatorio: 1
+  ceremonia_musicos: 1
+  flores_arreglos: 1
+  cremacion: false
+  certificacion_doc: false
+  urna: 1
+  joya: MyString
+  esquela: 1
+
+two:
+  feretro: 1
+  velatorio: 1
+  ceremonia_musicos: 1
+  flores_arreglos: 1
+  cremacion: false
+  certificacion_doc: false
+  urna: 1
+  joya: MyString
+  esquela: 1
