@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_29_023154) do
+ActiveRecord::Schema.define(version: 2022_12_30_214608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "communes", force: :cascade do |t|
+    t.string "name"
+    t.string "region"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "estimates", force: :cascade do |t|
     t.integer "service_id"
@@ -24,6 +31,7 @@ ActiveRecord::Schema.define(version: 2022_12_29_023154) do
     t.string "client_email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "is_velatorio", default: false
   end
 
   create_table "plans", force: :cascade do |t|

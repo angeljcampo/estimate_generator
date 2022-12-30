@@ -1,5 +1,5 @@
 class Service < ApplicationRecord
 
-  belongs_to :estimate
+  has_many :estimates
 
 end

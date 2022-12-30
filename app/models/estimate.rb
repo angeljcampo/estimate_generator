@@ -1,4 +1,4 @@
 class Estimate < ApplicationRecord
-  has_one :plan
-  has_one :service
+  belongs_to :plan
+  belongs_to :service
 end
