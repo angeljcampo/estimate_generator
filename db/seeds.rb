@@ -107,3 +107,63 @@ Commune.find_or_create_by(name: 'Isla de Maipo',        region: 'Región Metropo
 Commune.find_or_create_by(name: 'Padre Hurtado',        region: 'Región Metropolitana')
 Commune.find_or_create_by(name: 'Peñaflor',             region: 'Región Metropolitana')
 Commune.find_or_create_by(name: 'Talagante',            region: 'Región Metropolitana')
+
+#SEED PARA PLANES------------------------------------
+
+Plan.create!(
+  feretro: 1,  
+  velatorio: "Estándar", 
+  ceremonia_musicos: "Ceremonia", 
+  flores_arreglos: "1 corona estándar", 
+  cremacion: true, 
+  certificacion_doc: true, 
+  urna: "Ecológica", 
+  joya: "", 
+  esquela: false)
+  
+Plan.create!(
+  feretro: 2,  
+  velatorio: "Estándar", 
+  ceremonia_musicos: "Ceremonia", 
+  flores_arreglos: "2 coronas + 1 centro de flores estándar", 
+  cremacion: true, 
+  certificacion_doc: true, 
+  urna: "Ecológica / Conservación gama estándar", 
+  joya: "", 
+  esquela: false)
+
+Plan.create!(
+  feretro: 3,  
+  velatorio: "Noble", 
+  ceremonia_musicos: "Ceremonia", 
+  flores_arreglos: "2 coronas + 1 centro de flores gama media", 
+  cremacion: true, 
+  certificacion_doc: true, 
+  urna: "Ecológica / Conservación gama media-alta", 
+  joya: "1 joya con la huella digital del difunto", 
+  esquela: false)
+
+Plan.create!(
+  feretro: 4,  
+  velatorio: "Noble", 
+  ceremonia_musicos: "Ceremonia + 2 músicos", 
+  flores_arreglos: "3 coronas + 1 centro gama media-alta", 
+  cremacion: true, 
+  certificacion_doc: true, 
+  urna: "Ecológica / Conservación gama alta", 
+  joya: "2 joyas relicario para conservar cenizas
+  1 joya con la huella digital del difunto", 
+  esquela: false)
+
+Plan.create!(
+  feretro: 4,  
+  velatorio: "Noble", 
+  ceremonia_musicos: "Ceremonia + 3 músicos", 
+  flores_arreglos: "3 coronas + 1 centro gama media-alta", 
+  cremacion: true, 
+  certificacion_doc: true, 
+  urna: "Ecológica / Conservación gama alta", 
+  joya: "2 joyas relicario para conservar cenizas
+  1 joya con la huella digital del difunto", 
+  esquela: true)
+  
