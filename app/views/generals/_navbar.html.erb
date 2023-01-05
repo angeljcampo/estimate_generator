@@ -27,7 +27,11 @@
       </div>
   </div>
 </nav>
-
+<% flash.each do |type, msg| %>
+  <div class="alert alert-info">
+    <%= msg %>
+  </div>
+<% end %>
 <nav class=" container navbar navbar-light bg-light mt-4 box-shadow">
   <div class="col-md-12 text-center h4 text-secondary py-1">
     Configura un presupuesto en un minuto

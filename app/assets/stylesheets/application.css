@@ -13,9 +13,14 @@
  *= require_tree .
  *= require_self
  */
-
+ @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+ 
 .main-green{
   color: #93c123;
+}
+
+.bg-main-green{
+  background-color: #93c123;
 }
 
 img {
@@ -70,7 +75,20 @@ footer {
   text-decoration: dashed;
 }
 
+.col-form-label{
+  color: gray;
+}
+.px-20{
+  padding-left: 10vw;
+  padding-right: 10vw;
+}
 
-
-
+.contact_form {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+}
+.bg-urgency{
+  background-color: #b4d35e;
+}
 

@@ -1,0 +1,27 @@
+<div class="container py-4 mb-3">
+  <%  if @estimate_form.errors.any?  %>
+    <div class="error_messages">
+      <h2><%= pluralize(@estimate_form.errors.count, "error") %> prohibe que esta cotización sea realizada:</h2>
+      <ul>
+        <%= @estimate_form.errors.full_messages.each do |message| %>
+          <%= message %>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h2 class="main-green"> Opciones </h2>  
+  <%= form_for @estimate_form, url: wizard_path do |f| %>
+    <%= hidden_field_tag :estimate_id, @estimate_form.id %>
+    <%= f.hidden_field :service_id, value: @estimate_form.service_id %>
+    <div class="mb-3 ">
+        <%= render 'estimates/partials/contact_form',f: f %>
+      <div class="text-center">
+        <%= link_to 'Volver', previous_wizard_path, :class => 'btn bg-main-green text-light px-20' %>
+        <%= f.submit 'Solicitar presupuesto', :class => 'btn bg-main-green text-light px-20' %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+

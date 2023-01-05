@@ -7,7 +7,15 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
+require("turbolinks").start()
+require("@rails/activestorage").start()
+require("channels")
+require("jquery")
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+$(document).ready(function(){
+  $(".alert").delay(5000).slideUp(300);
+});

@@ -1,19 +1,19 @@
 <div class="card-group container pb-4">
   <% @services.each do |service| %>
     
-    <% if service.name == 'Cremación'%>
+    <% if service.name == Estimate::CREMACION%>
       <%  image = 'cremacion.jpg'%>
-    <% elsif service.name == 'Inhumación' %>
+    <% elsif service.name == Estimate::INHUMACION %>
       <%  image = 'inhumacion.jpg'%>
-    <% elsif service.name == 'Traslado o repatriación' %>
+    <% elsif service.name == Estimate::REPATRIACION %>
       <%  image = 'repatriacion.png'%>
-    <% elsif service.name == 'Otras opciones'%>
+    <% elsif service.name == Estimate::OTRAS_OPCIONES %>
       <%  image = 'other_options.jpg'%>
     <% end %>
     
 
     <div class="card border-white text-center m-4 ">
-      <%= link_to nuevo_presupuesto_path(service_id: service.id) do %>
+      <%= link_to new_estimate_path(service_id: service.id, service_name: service.name )do %>
         <%= image_tag(image, class: 'card-img-top') %>
       <% end %>
       
