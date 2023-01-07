@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 2023_01_04_233552) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "is_velatorio", default: false
+    t.integer "commune_id"
+    t.integer "destino_repatriacion"
   end
 
   create_table "plans", force: :cascade do |t|

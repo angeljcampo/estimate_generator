@@ -1,0 +1,38 @@
+
+<div class="form-group row pb-3">
+  <label class="col-sm-1 col-form-label text-right">Desde</label>
+  <div class="col-sm-3">
+    <%= f.select :commune_id, options_from_collection_for_select(@communes, :id, :name, @estimate_form.commune_id), {prompt: "Seleccionar comuna"}, { class: 'form-control', id:"commune-repatriacion-id" } %>
+  </div>
+  <label class="col-sm-1 col-form-label text-right">Hasta</label>
+  <div class="col-sm-3">
+    <%= f.select :destino_repatriacion, options_from_collection_for_select(@communes, :id, :name, @estimate_form.destino_repatriacion), {prompt: "Seleccionar comuna"}, { class: 'form-control' } %>
+  </div>
+</div>
+<div class="text-center">
+  <%= link_to 'Volver', root_path, :class => 'btn bg-main-green text-light px-20' %>
+  <%= f.submit'Continuar', :class => 'btn bg-main-green text-light px-20 submit-form', disabled: true %>
+</div>
+
+<script>
+
+  $("#commune-repatriacion-id").change(function () {
+    let selected = $("#commune-repatriacion-id option:selected").text();
+    let destino_rep = $('#estimate_destino_repatriacion option:selected').text();
+    if (selected != 'Seleccionar comuna' &&  destino_rep != 'Seleccionar comuna') {
+      $(".submit-form").prop("disabled",false);
+    } else {
+      $(".submit-form").prop("disabled",true);
+    }
+  })
+
+  $("#estimate_destino_repatriacion").change(function () {
+    let selected = $("#commune-repatriacion-id option:selected").text();
+    let destino_rep = $('#estimate_destino_repatriacion option:selected').text();
+    if (selected != 'Seleccionar comuna' &&  destino_rep != 'Seleccionar comuna') {
+      $(".submit-form").prop("disabled",false);
+    } else {
+      $(".submit-form").prop("disabled",true);
+    }
+  })
+</script>

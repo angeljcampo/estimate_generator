@@ -1,1 +1,18 @@
-<%= render 'estimates/partials/step_one' %>
+<div class="container py-4 mb-3">
+  <h2 class="main-green"> <%= params[:service_name] == Estimate::OTRAS_OPCIONES ? 'Contacto' : 'Servicio y localidad' %> </h2>  
+  <%= form_for @estimate_form, url: estimates_path, method: :post do |f| %>
+    <div class="mb-3 ">
+      <%= f.hidden_field :service_id, value: params[:service_id] %>
+      <% if params[:service_name] == Estimate::CREMACION || params[:service_name] == Estimate::INHUMACION %>
+        <%= render 'estimates/partials/no_repatriacion', f: f %>
+      <% elsif params[:service_name] == Estimate::REPATRIACION %>
+        <%= render 'estimates/partials/repatriacion',f: f %>
+      <% else params[:service_name] == Estimate::OTRAS_OPCIONES %> 
+        <%= render 'estimates/partials/contact_form',f: f %>
+      <% end %>
+      
+    </div>
+  </div>
+  <% end %>
+</div>
+

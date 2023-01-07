@@ -1,0 +1,112 @@
+<div class="container py-4 mb-3">
+  <h2 class="main-green"> Opciones </h2>  
+  <%= form_for @estimate_form, url: wizard_path do |f| %>
+    <%= f.hidden_field :plan_id, value: params[:plan_id] if params[:plan_id].present? %>
+    <%= hidden_field_tag :estimate_id, @estimate_form.id %>
+    <%= f.hidden_field :service_id, value: @estimate_form.service_id %>
+    <div class="mb-3 ">
+      <h5 class="text-secondary"> Has indicado que deseas recibir presupuesto para este servicio</h5>
+      <div class="row">
+        <div class="box-shadow my-5 py-4 col-md-6 contact_form bg-urgency">
+          <div class="card-body text-left text-secondary">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <%= hidden_field_tag :from_options, true %>
+                <label for="inputEmail4">Nombre</label>
+                <%= f.text_field :client_name, class:"form-control"  %>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Apellido</label>
+                <%= f.text_field :client_lastname, class:"form-control"  %>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="inputEmail4">Tu teléfono de contacto</label>
+                <%= f.text_field :client_phone, class:"form-control"  %>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="inputPassword4">Tu correo electrónico</label>
+                <%= f.text_field :client_email, class:"form-control"  %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="my-5 col-md-5 py-4 ">
+          <div class="card-body text-left text-secondary row">
+            <div class="col-md-6">
+              <i class="fas fa-user-friends fa-8x main-green"></i>
+            </div>
+            <div class="col-md-6 ">
+              <small>LLÁMANOS AL</small>
+              <h4>+569 3187 9315</h4>
+              <p>Atención inmediata 24 horas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center">
+        <%= link_to 'Volver', previous_wizard_path(estimate_id: @estimate_form.id), :class => 'btn bg-main-green text-light px-20' %>
+        <%= f.submit 'Solicitar presupuesto', :class => 'btn bg-main-green text-light px-20 submit-form',disabled: true %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<script>
+
+  $("#estimate_client_name").change(function () {
+    let name = $("#estimate_client_name").val();
+    let lastname = $("#estimate_client_lastname").val();
+    let phone = $("#estimate_client_phone").val();
+    let email = $("#estimate_client_email").val();
+    
+    if (name != '' && lastname != '' && phone != '' && email != '') {
+      $(".submit-form").prop("disabled",false);
+    } else {
+      $(".submit-form").prop("disabled",true);
+    }
+  })
+  
+  $("#estimate_client_lastname").change(function () {
+    let name = $("#estimate_client_name").val();
+    let lastname = $("#estimate_client_lastname").val();
+    let phone = $("#estimate_client_phone").val();
+    let email = $("#estimate_client_email").val();
+    
+    if (name != '' &&  lastname != ''  &&  phone != ''  &&  email != '') {
+      $(".submit-form").prop("disabled",false);
+    } else {
+      $(".submit-form").prop("disabled",true);
+    }
+  })
+
+  $("#estimate_client_phone").change(function () {
+    let name = $("#estimate_client_name").val();
+    let lastname = $("#estimate_client_lastname").val();
+    let phone = $("#estimate_client_phone").val();
+    let email = $("#estimate_client_email").val();
+    
+    if (name != '' &&  lastname != ''  &&  phone != ''  &&  email != '') {
+      $(".submit-form").prop("disabled",false);
+    } else {
+      $(".submit-form").prop("disabled",true);
+    }
+  })
+
+  $("#estimate_client_email").change(function () {
+    let name = $("#estimate_client_name").val();
+    let lastname = $("#estimate_client_lastname").val();
+    let phone = $("#estimate_client_phone").val();
+    let email = $("#estimate_client_email").val();
+    
+    if (name != '' &&  lastname != ''  &&  phone != ''  &&  email != '') {
+      $(".submit-form").prop("disabled",false);
+    } else {
+      $(".submit-form").prop("disabled",true);
+    }
+  })
+
+
+</script>

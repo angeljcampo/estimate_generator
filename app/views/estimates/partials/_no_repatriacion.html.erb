@@ -1,0 +1,36 @@
+<div class="form-group row">
+  <label class="col-sm-3 col-form-label ">Seleccione comuna</label>
+  <div class="col-sm-4">
+    <%= f.select :commune_id, options_from_collection_for_select(@communes, :id, :name), {prompt: "Seleccionar comuna"}, { class: 'form-control' } %>
+  </div>
+</div>
+<div class="form-group row">
+  <label for="staticEmail" class="col-sm-3 col-form-label">¿Deseas sala de velatorio?
+  </label>
+  <div class="col-sm-2">
+    <div class="form-check form-check-inline">
+      <%= f.radio_button :is_velatorio, true, {class: "form-check-input"} %>
+      <label class="form-check-label" for="inlineRadio1">Si</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <%= f.radio_button :is_velatorio, false,{class: "form-check-input"} %>
+      <label class="form-check-label" for="inlineRadio2">No</label>
+    </div>
+  </div>
+</div>
+<div class="text-center">
+  <%= link_to 'Volver', root_path, :class => 'btn bg-main-green text-light px-20' %>
+  <%= f.submit 'Continuar', :class => 'btn bg-main-green text-light px-20 submit-form', disabled: true %>
+</div>
+
+<script>
+
+  $("#estimate_commune_id").change(function () {
+    let selected = $("#estimate_commune_id option:selected").text();
+    if (selected != 'Seleccionar comuna') {
+      $(".submit-form").prop("disabled",false);
+    } else {
+      $(".submit-form").prop("disabled",true);
+    }
+  })
+</script>
