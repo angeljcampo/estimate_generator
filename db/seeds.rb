@@ -108,8 +108,10 @@
 # Commune.find_or_create_by(name: 'Peñaflor',             region: 'Región Metropolitana')
 # Commune.find_or_create_by(name: 'Talagante',            region: 'Región Metropolitana')
 
+#SEED PARA PLANES------------------------------------
 
 Plan.create!(
+  name: "Práctico",
   feretro: 1,  
   velatorio: "Estándar", 
   ceremonia_musicos: "Ceremonia", 
@@ -121,6 +123,7 @@ Plan.create!(
   esquela: false)
   
 Plan.create!(
+  name: "Estándar",
   feretro: 2,  
   velatorio: "Estándar", 
   ceremonia_musicos: "Ceremonia", 
@@ -132,6 +135,7 @@ Plan.create!(
   esquela: false)
 
 Plan.create!(
+  name: "Memorial",
   feretro: 3,  
   velatorio: "Noble", 
   ceremonia_musicos: "Ceremonia", 
@@ -143,6 +147,7 @@ Plan.create!(
   esquela: false)
 
 Plan.create!(
+  name: "Senator",
   feretro: 4,  
   velatorio: "Noble", 
   ceremonia_musicos: "Ceremonia + 2 músicos", 
@@ -155,6 +160,7 @@ Plan.create!(
   esquela: false)
 
 Plan.create!(
+  name: "Ambassador",
   feretro: 4,  
   velatorio: "Noble", 
   ceremonia_musicos: "Ceremonia + 3 músicos", 
@@ -165,3 +171,4 @@ Plan.create!(
   joya: "2 joyas relicario para conservar cenizas
   1 joya con la huella digital del difunto", 
   esquela: true)
+  

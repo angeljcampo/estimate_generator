@@ -1,6 +1,7 @@
 class EstimatesController < ApplicationController
   def index
     @services = Service.all
+
   end
   
   def new
@@ -10,12 +11,10 @@ class EstimatesController < ApplicationController
   end
 
   def create
-    Rails.logger.info "PARAMSSSS #{params.inspect}"
-    Rails.logger.info "FROMMMM #{params[:from_options]}"
     @estimate_form = Estimate.new(estimate_params)
     if @estimate_form.save
       if params[:from_options].present?
-        redirect_to root_path, notice: "¡Tu cotización ha sido creada, próximamente llegará un email con los detalles!."
+        redirect_to root_path, notice: "Gracias por proveernos tu información, nos contactaremos contigo lo antes posible."
       else
       redirect_to estimate_estimate_steps_path(estimate_id: @estimate_form.id, service_id: params[:service_id])
       end

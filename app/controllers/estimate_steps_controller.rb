@@ -16,7 +16,7 @@ class EstimateStepsController < ApplicationController
 
   def update
     @estimate_form = current_estimate
-    @estimate_form.assign_attributes(estimate_params)
+    @estimate_form.update(estimate_params)
 
     redirect_to_finish_wizard
   end
@@ -28,7 +28,7 @@ class EstimateStepsController < ApplicationController
   end
 
   def redirect_to_finish_wizard
-    redirect_to root_url, notice: "Gracias por proveernos tu información, nos contactaremos contigo lo antes posible."
+    redirect_to root_url, notice: "¡Tu cotización ha sido creada, próximamente llegará un email con los detalles!." 
   end
 
   def estimate_params

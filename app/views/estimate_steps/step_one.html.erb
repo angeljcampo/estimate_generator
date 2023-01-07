@@ -9,15 +9,14 @@
       </ul>
     </div>
   <% end %>
-
+  <%= params[:step] %>
   <h2 class="main-green"> Opciones </h2>  
   <%= form_for @estimate_form, url: wizard_path do |f| %>
     <%= hidden_field_tag :estimate_id, @estimate_form.id %>
     <div class="mb-3 ">
-        <%= f.select :plan_id, options_from_collection_for_select(@plans, :id, :feretro), {prompt: "Seleccionar plan"}, { class: 'form-control' } %>
+      <%= render 'table' %>
       <div class="text-center pt-3">
         <%= link_to 'Volver', new_estimate_path(service_id: @estimate_form.service_id, service_name: @estimate_form.service.name ), :class => 'btn bg-main-green text-light px-20' %>
-        <%= link_to 'Continuar', next_wizard_path(estimate_id: @estimate_form.id), :class => 'btn bg-main-green text-light px-20' %>
       </div>
     </div>
   </div>

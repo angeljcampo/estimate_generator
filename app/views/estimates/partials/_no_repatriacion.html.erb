@@ -18,3 +18,19 @@
     </div>
   </div>
 </div>
+<div class="text-center">
+  <%= link_to 'Volver', root_path, :class => 'btn bg-main-green text-light px-20' %>
+  <%= f.submit 'Continuar', :class => 'btn bg-main-green text-light px-20 submit-form', disabled: true %>
+</div>
+
+<script>
+
+  $("#estimate_commune_id").change(function () {
+    let selected = $("#estimate_commune_id option:selected").text();
+    if (selected != 'Seleccionar comuna') {
+      $(".submit-form").prop("disabled",false);
+    } else {
+      $(".submit-form").prop("disabled",true);
+    }
+  })
+</script>
