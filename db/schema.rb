@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_04_233552) do
+ActiveRecord::Schema.define(version: 2023_01_11_014709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,18 +37,31 @@ ActiveRecord::Schema.define(version: 2023_01_04_233552) do
   end
 
   create_table "plans", force: :cascade do |t|
-    t.integer "feretro"
-    t.string "velatorio"
-    t.string "ceremonia_musicos"
-    t.string "flores_arreglos"
     t.boolean "cremacion"
-    t.boolean "certificacion_doc"
-    t.string "urna"
-    t.string "joya"
-    t.boolean "esquela"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
+    t.integer "cofre"
+    t.integer "capilla"
+    t.boolean "cruz", default: false
+    t.boolean "sala_velatoria", default: false
+    t.boolean "flores", default: false
+    t.boolean "libro_de_condolencias", default: false
+    t.boolean "tarjeta_de_condolencias", default: false
+    t.integer "cubre_urnas"
+    t.boolean "pie_de_urnas", default: false
+    t.boolean "medico", default: false
+    t.boolean "inscripcion_registro_civil", default: false
+    t.boolean "tramites_legales", default: false
+    t.integer "carroza_panoramica"
+    t.integer "van_de_acompanamiento"
+    t.boolean "cinta_de_identificacion", default: false
+    t.boolean "video_de_homenaje", default: false
+    t.integer "cafeteria"
+    t.boolean "obituario_virtual", default: false
+    t.boolean "obituario_mercucio", default: false
+    t.boolean "homenaje_presencial", default: false
+    t.integer "tipo_de_anfora"
   end
 
   create_table "services", force: :cascade do |t|
