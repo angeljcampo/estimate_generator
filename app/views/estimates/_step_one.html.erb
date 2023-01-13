@@ -1,9 +1,0 @@
-<div class="container py-4 mb-3">
-  <% if @estimate_form.is_velatorio == true %>
-  <div class="mb-3 ">
-    <%= render 'estimates/partials/table', f:f %>
-    <% else %>
-    <%= render 'estimates/partials/basic_plan_table',f:f %>
-    <% end  %>
-  </div>
-</div>
