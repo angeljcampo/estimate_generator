@@ -111,64 +111,79 @@ Commune.find_or_create_by(name: 'Talagante',            region: 'Región Metropo
 # SEED PARA PLANES------------------------------------
 
 Plan.create!(
-  name: "Práctico",
-  feretro: 1,  
-  velatorio: "Estándar", 
-  ceremonia_musicos: "Ceremonia", 
-  flores_arreglos: "1 corona estándar", 
+  name: "Austero",
+  cofre: 1,
+  capilla: 1,
+  cruz: true,
+  sala_velatoria: true,
+  flores: true,
+  libro_de_condolencias: true,
+  tarjeta_de_condolencias: true,
+  cubre_urnas: 1,
+  pie_de_urnas: false,
+  medico: true,
+  inscripcion_registro_civil: true,
+  tramites_legales: true,
+  carroza_panoramica: 1,
+  van_de_acompanamiento: 1,
+  cinta_de_identificacion: true,
+  video_de_homenaje: true,
+  cafeteria: 1, 
+  obituario_virtual: true,
+  obituario_mercucio: false,
+  homenaje_presencial: false,
   cremacion: true, 
-  certificacion_doc: true, 
-  urna: "Ecológica", 
-  joya: "", 
-  esquela: false)
+  tipo_de_anfora: 1
+  )
   
 Plan.create!(
-  name: "Estándar",
-  feretro: 2,  
-  velatorio: "Estándar", 
-  ceremonia_musicos: "Ceremonia", 
-  flores_arreglos: "2 coronas + 1 centro de flores estándar", 
+  name: "Intermedio ",
+  cofre: 2,
+  capilla: 2,
+  cruz: true,
+  sala_velatoria: true,
+  flores: true,
+  libro_de_condolencias: true,
+  tarjeta_de_condolencias: true,
+  cubre_urnas: 2,
+  pie_de_urnas: false,
+  medico: true,
+  inscripcion_registro_civil: true,
+  tramites_legales: true,
+  carroza_panoramica: 1,
+  van_de_acompanamiento: 1,
+  cinta_de_identificacion: true,
+  video_de_homenaje: true,
+  cafeteria: 1, 
+  obituario_virtual: true,
+  obituario_mercucio: false,
+  homenaje_presencial: false,
   cremacion: true, 
-  certificacion_doc: true, 
-  urna: "Ecológica / Conservación gama estándar", 
-  joya: "", 
-  esquela: false)
+  tipo_de_anfora: 1
+)
 
 Plan.create!(
-  name: "Memorial",
-  feretro: 3,  
-  velatorio: "Noble", 
-  ceremonia_musicos: "Ceremonia", 
-  flores_arreglos: "2 coronas + 1 centro de flores gama media", 
+  name: "Superior",
+  cofre: 3,
+  capilla: 3,
+  cruz: true,
+  sala_velatoria: true,
+  flores: true,
+  libro_de_condolencias: true,
+  tarjeta_de_condolencias: true,
+  cubre_urnas: 3,
+  pie_de_urnas: true,
+  medico: true,
+  inscripcion_registro_civil: true,
+  tramites_legales: true,
+  carroza_panoramica: 2,
+  van_de_acompanamiento: 2,
+  cinta_de_identificacion: true,
+  video_de_homenaje: true,
+  cafeteria: 3, 
+  obituario_virtual: true,
+  obituario_mercucio: true,
+  homenaje_presencial: true,
   cremacion: true, 
-  certificacion_doc: true, 
-  urna: "Ecológica / Conservación gama media-alta", 
-  joya: "1 joya con la huella digital del difunto", 
-  esquela: false)
-
-Plan.create!(
-  name: "Senator",
-  feretro: 4,  
-  velatorio: "Noble", 
-  ceremonia_musicos: "Ceremonia + 2 músicos", 
-  flores_arreglos: "3 coronas + 1 centro gama media-alta", 
-  cremacion: true, 
-  certificacion_doc: true, 
-  urna: "Ecológica / Conservación gama alta", 
-  joya: "2 joyas relicario para conservar cenizas
-  1 joya con la huella digital del difunto", 
-  esquela: false)
-
-Plan.create!(
-  name: "Ambassador",
-  feretro: 4,  
-  velatorio: "Noble", 
-  ceremonia_musicos: "Ceremonia + 3 músicos", 
-  flores_arreglos: "3 coronas + 1 centro gama media-alta", 
-  cremacion: true, 
-  certificacion_doc: true, 
-  urna: "Ecológica / Conservación gama alta", 
-  joya: "2 joyas relicario para conservar cenizas
-  1 joya con la huella digital del difunto", 
-  esquela: true)
-  
+  tipo_de_anfora: 2
+)
