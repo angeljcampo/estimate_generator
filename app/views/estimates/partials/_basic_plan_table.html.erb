@@ -1,0 +1,69 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Seleccionar</th>
+      <th scope="col" class="text-center text-secondary"><%=@basic_plan.name %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row" class="">Feretro</th>
+      <td class="text-center text-secondary"><%=@basic_plan.feretro %></td>
+    </tr>
+    <tr>
+      <th scope="row">Sala de Velatorio</th>
+      <td class="text-center text-secondary"><%=@basic_plan.velatorio %></td>
+
+    </tr>
+    <tr>
+      <th scope="row">Ceremonia y músicos</th>
+      <td class="text-center text-secondary"><%=@basic_plan.ceremonia_musicos %></td>
+
+    </tr>
+    <tr>
+      <th scope="row">Flores y arreglos</th>
+      <td class="text-center text-secondary"><%=@basic_plan.flores_arreglos %></td>
+    </tr>
+    <tr>
+      <th scope="row">Cremación</th>
+      <td class="text-center text-secondary">
+        <% if @basic_plan.cremacion == true %>
+          <i class="far fa-check-circle fa-2x main-green"></i>
+        <% else %>
+          <i class="far fa-times-circle fa-2x text-danger"></i>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Certificación y documentación</th>
+      <td class="text-center text-secondary">
+        <% if @basic_plan.certificacion_doc == true %>
+          <i class="far fa-check-circle fa-2x main-green"></i>
+        <% else %>
+          <i class="far fa-times-circle fa-2x text-danger"></i>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Urna</th>
+      <td class="text-center text-secondary"><%=@basic_plan.urna %></td>
+    </tr>
+    <tr>
+      <th scope="row">Joya</th>
+      <td class="text-center text-secondary"><%=@basic_plan.joya %></td>
+    </tr>
+    <tr>
+      <th scope="row">Esquela en diario local</th>
+      <td class="text-center text-secondary">
+        <% if @basic_plan.esquela == true %>
+          <i class="far fa-check-circle fa-2x main-green"></i>
+        <% else %>
+          <i class="far fa-times-circle fa-2x text-danger"></i>
+        <% end %>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row"></th>
+      <td class="text-center text-secondary"><%#= link_to 'Seleccionar', estimates_path(plan_id: @basic_plan.id,step: 3), :class => 'btn bg-main-green text-light select-plan',estimate_id: @estimate_form.id %></td>
+  </tbody>
+</table>
