@@ -24,13 +24,13 @@
 </div>
 
 <script>
-
-  $("#estimate_commune_id").change(function () {
-    let selected = $("#estimate_commune_id option:selected").text();
-    if (selected != 'Seleccionar comuna') {
-      $(".submit-form").prop("disabled",false);
+  document.getElementById("estimate_commune_id").addEventListener("change",function(){
+    let selected = document.getElementById("estimate_commune_id").value;
+    let submit = document.getElementsByClassName("submit-form");
+    if (selected != '') {
+      submit[0].removeAttribute("disabled");
     } else {
-      $(".submit-form").prop("disabled",true);
+      submit[0].setAttribute("disabled", true)
     }
   })
 </script>
