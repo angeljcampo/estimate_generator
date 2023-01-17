@@ -5,7 +5,7 @@ class EstimateStepsController < ApplicationController
 
   def show
     @plans = Plan.all
-    @basic_plan = Plan.find_by(name:'Práctico')
+    @basic_plan = Plan.find_by(name:'Austero')
     @estimate_form = current_estimate
 
     case step
