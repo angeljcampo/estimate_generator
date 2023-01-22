@@ -23,24 +23,19 @@ class EstimateStepsController < ApplicationController
     @estimate_form = current_estimate
     @estimate_form.update(estimate_params)
     redirect_to_finish_wizard
-    Rails.logger.info "antes del correo-----+++"
-    EstimateNotifierMailer.send_estimate_email(@estimate_form).deliver
-    # contact_client(@estimate_form)
-    Rails.logger.info "-------<Despues del correo"
+    # save_path = Rails.root.join('public/pdfs', "cotizacion_#{@estimate_form.id}.pdf")
+    # pdf = WickedPdf.new.pdf_from_string(
+    #   render_to_string(
+    #     :template =>'estimates/estimate_pdf.html.erb',
+    #     enncoding: 'UTF-8',
+    #     page_size: 'A4',
+    #   )
+    # )
+    # File.open(save_path, 'wb') do |file|
+    #   file << pdf
+    # end
+    EstimateMailer.with(estimate: @estimate_form).send_estimate_email.deliver_later
   end
-
-
-# ----------------------esta es una prueba
-
-def contact_client(estimate)
-  from = SendGrid::Email.new(email: 'kimera.acces@gmail.com')
-  to = SendGrid::Email.new(email: 'kimera.acces@gmail.com')
-  subject = "Consulta de Cliente #{estimate.client_name}"
-  content = SendGrid::Content.new(type: 'text/plain', value: "#{estimate.client_phone}. Responder correo a #{estimate.client_email}")
-  mail = SendGrid::Mail.new(from, subject, to, content) 
-  sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
-  response = sg.client.mail._('send').post(request_body: mail.to_json)
-end
 
 
 

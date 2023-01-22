@@ -1,4 +1,4 @@
-<h5 class="text-secondary"> Has indicado que deseas recibir presupuesto para este servicio</h5>
+<p class="text-secondary "> Has indicado que deseas recibir presupuesto para este servicio</p>
 <div class="row">
   <div class="box-shadow my-5 py-4 col-md-6 contact_form bg-urgency">
     <div class="card-body text-left text-secondary">
@@ -41,83 +41,62 @@
 <div class="text-center">
   <%= link_to 'Volver', root_path, :class => 'btn bg-main-green text-light px-20' %>
   <%= f.submit 'Solicitar presupuesto', :class => 'btn bg-main-green text-light px-20 submit-form', disabled: true %>
+  
 </div>
   
   
 <script>
 
-  $("#estimate_client_name").change(function () {
-    let name = $("#estimate_client_name").val();
-    let lastname = $("#estimate_client_lastname").val();
-    let phone = $("#estimate_client_phone").val();
-    let email = $("#estimate_client_email").val();
-    
+  document.getElementById("estimate_client_name").addEventListener("change",function(){
+    let name = document.getElementById("estimate_client_name").value;
+    let lastname = document.getElementById("estimate_client_lastname").value;
+    let phone = document.getElementById("estimate_client_phone").value;
+    let email = document.getElementById("estimate_client_email").value;
+    let submit = document.getElementsByClassName("submit-form");
     if (name != '' && lastname != '' && phone != '' && email != '') {
-      alert(name + ' ' + lastname + ' ' + phone + ' ' + email)
-      $(".submit-form").prop("disabled",false);
+      submit[0].removeAttribute("disabled");
     } else {
-      alert(name + ' ' + lastname + ' ' + phone + ' ' + email)
-      alert("ENTRO AL else name")
-      $(".submit-form").prop("disabled",true);
-    }
-  })
-  
-  $("#estimate_client_lastname").change(function () {
-    let name = $("#estimate_client_name").val();
-    let lastname = $("#estimate_client_lastname").val();
-    let phone = $("#estimate_client_phone").val();
-    let email = $("#estimate_client_email").val();
-    
-    if (name != '' &&  lastname != ''  &&  phone != ''  &&  email != '') {
-      alert("ENTRO AL IF lastname")
-      $(".submit-form").prop("disabled",false);
-    } else {
-      alert("ENTRO AL else lastname")
-      $(".submit-form").prop("disabled",true);
+      submit[0].setAttribute("disabled", true)
     }
   })
 
-  $("#estimate_client_phone").change(function () {
-    let name = $("#estimate_client_name").val();
-    let lastname = $("#estimate_client_lastname").val();
-    let phone = $("#estimate_client_phone").val();
-    let email = $("#estimate_client_email").val();
-    
-    if (name != '' &&  lastname != ''  &&  phone != ''  &&  email != '') {
-      alert("ENTRO AL IF phone")
-      $(".submit-form").prop("disabled",false);
+  document.getElementById("estimate_client_lastname").addEventListener("change",function(){
+    let name = document.getElementById("estimate_client_name").value;
+    let lastname = document.getElementById("estimate_client_lastname").value;
+    let phone = document.getElementById("estimate_client_phone").value;
+    let email = document.getElementById("estimate_client_email").value;
+    let submit = document.getElementsByClassName("submit-form");
+    if (name != '' && lastname != '' && phone != '' && email != '') {
+      submit[0].removeAttribute("disabled");
     } else {
-      alert("ENTRO AL else phone")
-      $(".submit-form").prop("disabled",true);
+      submit[0].setAttribute("disabled", true)
     }
   })
 
-  $("#estimate_client_email").change(function () {
-    let name = $("#estimate_client_name").val();
-    let lastname = $("#estimate_client_lastname").val();
-    let phone = $("#estimate_client_phone").val();
-    let email = $("#estimate_client_email").val();
-    
-    if (name != '' &&  lastname != ''  &&  phone != ''  &&  email != '') {
-      alert("ENTRO AL IF email")
-      $(".submit-form").prop("disabled",false);
+  document.getElementById("estimate_client_phone").addEventListener("change",function(){
+    let name = document.getElementById("estimate_client_name").value;
+    let lastname = document.getElementById("estimate_client_lastname").value;
+    let phone = document.getElementById("estimate_client_phone").value;
+    let email = document.getElementById("estimate_client_email").value;
+    let submit = document.getElementsByClassName("submit-form");
+    if (name != '' && lastname != '' && phone != '' && email != '') {
+      submit[0].removeAttribute("disabled");
     } else {
-      alert("ENTRO AL else email")
-      $(".submit-form").prop("disabled",true);
+      submit[0].setAttribute("disabled", true)
     }
   })
 
-
-
-
-
-
-
-
-
-
-
-
-
+  document.getElementById("estimate_client_email").addEventListener("change",function(){
+    let name = document.getElementById("estimate_client_name").value;
+    let lastname = document.getElementById("estimate_client_lastname").value;
+    let phone = document.getElementById("estimate_client_phone").value;
+    let email = document.getElementById("estimate_client_email").value;
+    let submit = document.getElementsByClassName("submit-form");
+    if (name != '' && lastname != '' && phone != '' && email != '') {
+      submit[0].removeAttribute("disabled");
+    } else {
+      submit[0].setAttribute("disabled", true)
+    }
+  })
 
 </script>

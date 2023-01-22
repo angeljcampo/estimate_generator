@@ -17,16 +17,15 @@
 
 body{
   font-size: small;
+  margin: 0;
+  margin-bottom: 40px;
+  background-color: rgb(241, 255, 226);
 } 
 .main-green{
   color: #93c123;
 }
 .navbar{
   background-color: #eaf5ff !important;
-}
-.navbar-blue{
-  background-color: #29235c;
-  height: 3vh;
 }
 
 .bg-main-green{
@@ -43,33 +42,32 @@ img {
 }
 .border-main {
   height: 50px;
-  border: 3px solid #93c123;
+  border: 2px solid #93c123;
   border-radius: 10px;
 }
 html {
   min-height: 100%;
   position: relative;
 }
-body {
-  margin: 0;
-  margin-bottom: 40px;
-}
+
 footer {
   position: absolute;
-   bottom: 0;
-   width: 100%;
-   height: 60px;   
+  left: 0;
+  bottom: 0;
+  width: 100%;
   background-color: black;
   color: white;
-  margin-top: -50px;
+  text-align: center;
+  padding: 35px 0 35px 0;
 }
+
 .card img{
   width: 70vw;
   height: 150px;
 }
 .step-active{
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
   display: inline-block;
   border: 2px solid #93c123;
   border-radius: 50%;
@@ -122,29 +120,24 @@ footer {
   background-color: #b4d35e;
 }
 
+.decoration-line{
+  background-color: #b4d35e;
+  height: 5px;
+  width: 60px;
+  border-radius: 3px;
 
-
-
-
-
-
-/* .first-plan:hover{
-  background-color: red ;
-  transition: 0.5s;
 }
-.second-plan:hover{
-  background-color: red !important;
-  transition: 0.5s;
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
 }
-.third-plan:hover{
-  background-color: red !important;
-  transition: 0.5s;
+
+.closebtn:hover {
+  color: black;
 }
-.fourth-plan:hover{
-  background-color: red !important;
-  transition: 0.5s;
-}
-.fifth-plan:hover{
-  background-color: red !important;
-  transition: 0.5s;
-} */
