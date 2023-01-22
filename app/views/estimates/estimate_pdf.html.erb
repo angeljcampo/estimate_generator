@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FunerariaProjectManager</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/ "crossorigin="anonymous">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <%= image_tag wicked_pdf_asset_base64("test_logo.jpg"), size: '180x90' %>
+    <h1 class="text-muted text-center">Funeraria Ivan Martinez</h1>
+    <div class="py-3">
+      <h2 class="font-weight-bolder text-center pb-3 mb-3"> Presupuesto </h2>
+    </div>
+
+    <div class="container mt-3">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td>Nombre cliente:</td>
+            <td colspan="2"><%= "#{@estimate.client_name} #{@estimate.client_lastname}" %></td>
+          </tr>
+          <tr>
+            <td>Teléfono:</td>
+            <td colspan="2"><%= @estimate.client_phone %></td>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td colspan="2"><%= @estimate.client_email %></td>
+          </tr>
+          <tr>
+            <td>Plan:</td>
+            <td class="font-weight-bolder" colspan="2"><%= @estimate.service.name %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="font-weight-bolder text-center pb-3 mb-3"> Plan Cotizado </h2>
+
+    <table class="table table-bordered box-shadow">
+    <tbody>
+      <tr>
+        <th scope="col">Nombre plan</th>
+        <th scope="col" class="text-center text-secondary"><%=@estimate.plan.name %></th>
+        <th>Inscripcion Registro Civil</th>
+        <td class="text-center text-secondary">
+          <% if @estimate.plan.inscripcion_registro_civil == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <th scope="row">Cofre</th>
+        <td class="text-center text-secondary"><%=@estimate.plan.cofre %></td>
+        <th>Tramites Legales</th>
+        <td class="text-center text-secondary">
+          <% if @estimate.plan.tramites_legales == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <th>Capilla</th>
+        <td class="text-center text-secondary"><%=@estimate.plan.capilla %></td>
+        <th>Carroza Panoramica</th>
+        <td class="text-center text-secondary"><%=@estimate.plan.carroza_panoramica %></td>
+
+      </tr>
+      <tr>
+        <th>Cruz</th>
+        <td class="text-center text-secondary">
+          <% if @estimate.plan.cruz == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <th>Van de Acompañamiento</th>
+        <td class="text-center text-secondary"><%=@estimate.plan.van_de_acompanamiento %></td>
+      </tr>
+      <tr>
+        <th>Sala Velatoria</th>
+        <td class="text-center text-secondary">
+          <% if @estimate.plan.sala_velatoria == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <th>Cinta de Identificacion</th>
+        <td class="text-center text-secondary">
+          <% if @estimate.plan.cinta_de_identificacion == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <th>Flores</th>
+        <td class="text-center text-secondary">
+          <% if @estimate.plan.flores == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <th>Cafeteria</th>
+        <td class="text-center text-secondary"><%=@estimate.plan.cafeteria %></td>
+      </tr>
+      <tr>
+        <th>Libro de Condolencias</th>
+        <td class="text-center text-secondary">
+          <% if @estimate.plan.libro_de_condolencias == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <th>Obituario Virtual</th>
+        <td class="text-center text-secondary">
+          <% if @estimate.plan.obituario_virtual == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <th>Tarjeta de Condolencias</th>
+        <td class="text-center text-secondary">
+          <% if @estimate.plan.tarjeta_de_condolencias == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <th>Obituario Mercucio</th>
+        <td class="text-center text-secondary">
+          <% if @estimate.plan.obituario_mercucio == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+      </tr>
+
+      <tr>
+        <th>Cubre Urnas</th>
+        <td class="text-center text-secondary"><%=@estimate.plan.cubre_urnas %></td>
+        <th>Homenaje Presencial</th>
+        <td class="text-center text-secondary">
+          <% if @estimate.plan.homenaje_presencial == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+      </tr>
+      
+      <tr>
+        <th>Pie de Urnas</th>
+        <td class="text-center text-secondary">
+          <% if @estimate.plan.pie_de_urnas == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <th>Video de Homenaje</th>
+        <td class="text-center text-secondary">
+          <% if @estimate.plan.video_de_homenaje == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+      </tr>
+
+      <tr>
+        <th>Medico</th>
+        <td class="text-center text-secondary">
+          <% if @estimate.plan.medico == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <th>Tipo de Anfora</th>
+        <td class="text-center text-secondary"><%=@estimate.plan.tipo_de_anfora %></td>
+      </tr>
+
+
+      <tr>
+        <th>Precio</th>
+        <td class="text-center text-secondary"><%= number_to_currency(@estimate.plan.precio, :separator => '.') %></td>
+      </tr>
+      
+    </tbody>
+  </table>
+
+    <%= render 'generals/footer' %>
+  
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+  </body>
+</html>

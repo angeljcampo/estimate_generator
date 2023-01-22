@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_11_014709) do
+ActiveRecord::Schema.define(version: 2023_01_19_221128) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,7 +33,8 @@ ActiveRecord::Schema.define(version: 2023_01_11_014709) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "is_velatorio", default: false
     t.integer "commune_id"
-    t.integer "destino_repatriacion"
+    t.string "destino_repatriacion"
+    t.string "origen_repatriacion"
   end
 
   create_table "plans", force: :cascade do |t|
@@ -62,6 +63,7 @@ ActiveRecord::Schema.define(version: 2023_01_11_014709) do
     t.boolean "obituario_mercucio", default: false
     t.boolean "homenaje_presencial", default: false
     t.integer "tipo_de_anfora"
+    t.integer "precio"
   end
 
   create_table "services", force: :cascade do |t|

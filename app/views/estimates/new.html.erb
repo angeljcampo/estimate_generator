@@ -1,4 +1,5 @@
 <div class="container py-4 mb-3">
+  <div class="decoration-line mb-2"></div>
   <h2 class="main-green"> <%= params[:service_name] == Estimate::OTRAS_OPCIONES ? 'Contacto' : 'Servicio y localidad' %> </h2>  
   <%= form_for @estimate_form, url: estimates_path, method: :post do |f| %>
     <div class="mb-3 ">

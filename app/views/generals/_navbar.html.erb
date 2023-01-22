@@ -11,7 +11,6 @@
           <div class="col-md-3 col-sm-12 col-12 text-left">
               <strong>Llama Gratis</strong><br>       
               <a href="tel:6004909090" class="text-secondary">600 49 09 090</a>            
-           
           </div>
           <div class="col-md-2 col-sm-12 col-12 center border-main m-0">
               <i class="far fa-comments fa-2x main-green"></i>
@@ -25,12 +24,13 @@
   </div>
 </nav>
 <% flash.each do |type, msg| %>
-  <div class="alert alert-info">
+  <div class="alert alert-info" id= "alert-estimate">
     <%= msg %>
+    <span class="closebtn text-right" onclick="this.parentElement.style.display='none';">&times;</span>
   </div>
 <% end %>
-<nav class=" container navbar navbar-light bg-light mt-4 box-shadow">
-  <div class="col-md-12 text-center h4 text-secondary py-1">
+<nav class=" container navbar navbar-light bg-white mt-4 box-shadow">
+  <div class="col-md-12 text-center h5 text-secondary py-1">
     Configura un presupuesto en un minuto
   </div>
 </nav>
@@ -62,7 +62,7 @@
 <% end %>
 
 
-<nav class="container navbar navbar-light bg-light text-center text-secondary py-2 my-4">
+<nav class="container navbar text-center text-secondary py-2 my-4">
   <div class="col-md-4 col-4">
     <span class="<%= step_1 == true ? 'step-active' : ''%>">1</span>
   </div>
@@ -73,3 +73,4 @@
     <span class="<%= step_3 == true ? 'step-active' : ''%>">3</span>
   </div>
 </nav>
+  

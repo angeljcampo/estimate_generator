@@ -16,8 +16,22 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-$(document).ready(function(){
-  
-  $(".alert").delay(5000).slideUp(300);
+function hideAlert(){
+  let alertEstimate = document.getElementById("alert-estimate");
+  if (alertEstimate.display === 'block') {
+		alertEstimate.display === 'none'
+	}
+}
 
-});
+
+document.addEventListener('DOMContentLoaded', function () {
+  
+  if (document.getElementById("alert-estimate")){
+    let alertEstimate = document.getElementById("alert-estimate");
+    setTimeout(() => {
+      alertEstimate.display === 'none'
+    }, 3000);
+  }
+  
+
+}, false);
