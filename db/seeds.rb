@@ -133,7 +133,8 @@ Plan.create!(
   obituario_mercucio: false,
   homenaje_presencial: false,
   cremacion: true, 
-  tipo_de_anfora: 1
+  tipo_de_anfora: 1,
+  precio: 20000
   )
   
 Plan.create!(
@@ -159,7 +160,8 @@ Plan.create!(
   obituario_mercucio: false,
   homenaje_presencial: false,
   cremacion: true, 
-  tipo_de_anfora: 1
+  tipo_de_anfora: 1,
+  precio: 35000
 )
 
 Plan.create!(
@@ -185,5 +187,6 @@ Plan.create!(
   obituario_mercucio: true,
   homenaje_presencial: true,
   cremacion: true, 
-  tipo_de_anfora: 2
+  tipo_de_anfora: 2,
+  precio: 55000
 )
