@@ -31,7 +31,7 @@ WickedPdf.config = {
 WickedPdf.config.merge!({
   layout: "pdf.html.erb",
   orientation: "Landscape", # Portrait
-  page_size: "A4",
+  page_size: "Letter",
   lowquality: true,
   zoom: 1,
   dpi: 75
