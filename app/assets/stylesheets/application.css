@@ -115,6 +115,7 @@ footer {
   margin: 0 auto; /* Added */
   float: none; /* Added */
   margin-bottom: 10px; /* Added */
+  
 }
 .bg-urgency{
   background-color: #b4d35e;
@@ -140,4 +141,14 @@ footer {
 
 .closebtn:hover {
   color: black;
+}
+
+.basic_plan_table {
+  width: 50%;
+  
+}
+
+.main-table{
+  width: 95%;
+  
 }

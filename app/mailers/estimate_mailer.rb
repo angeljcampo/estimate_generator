@@ -11,7 +11,7 @@ class EstimateMailer < ApplicationMailer
 
 
 
-    save_path = Rails.root.join('public/pdfs', "cotizacion_#{@estimate.id}.pdf")
+    save_path = Rails.root.join('public/pdfs', "cotizacion_#{@estimate.estimate_number}.pdf")
     File.open(save_path, 'wb') do |file|
       file << pdf
     end
@@ -31,13 +31,13 @@ class EstimateMailer < ApplicationMailer
         page_size: 'letter'
       )
     )
-    save_path = Rails.root.join('public/pdfs', "cotizacion_#{@estimate.id}.pdf")
+    save_path = Rails.root.join('public/pdfs', "cotizacion_#{@estimate.estimate_number}.pdf")
     File.open(save_path, 'wb') do |file|
       file << pdf
     end
     
     attachments['repatriacion.pdf'] = File.read(save_path)
-    mail( :to => 'angeljcampo@gmail.com',
+    mail( :to => 'angeljcampo@gmail.com', #CAMBIAR este correo por el de la funeria
     :subject => "Cotizacion #{@estimate.client_name} #{@estimate.client_lastname} - Repatriación" )
 
     File.delete(save_path) if File.exist?(save_path)
@@ -52,7 +52,7 @@ class EstimateMailer < ApplicationMailer
         page_size: 'letter'
       )
     )
-    save_path = Rails.root.join('public/pdfs', "cotizacion_#{@estimate.id}.pdf")
+    save_path = Rails.root.join('public/pdfs', "cotizacion_#{@estimate.estimate_number}.pdf")
     File.open(save_path, 'wb') do |file|
       file << pdf
     end
