@@ -417,9 +417,9 @@
 
     <tr>
       <th>Precio</th>
-      <td class="text-center text-secondary"><%= number_to_currency(@plans[0].precio, :separator => '.') %></td>
-      <td class="text-center text-secondary"><%= number_to_currency(@plans[1].precio, :separator => '.') %></td>
-      <td class="text-center text-secondary"><%= number_to_currency(@plans[2].precio, :separator => '.') %></td>
+      <td class="text-center text-secondary"><%= number_to_currency(@plans[0].precio, separator: ",", delimiter: "") %></td>
+      <td class="text-center text-secondary"><%= number_to_currency(@plans[1].precio, separator: ",", delimiter: "") %></td>
+      <td class="text-center text-secondary"><%= number_to_currency(@plans[2].precio, separator: ",", delimiter: "") %></td>
     </tr>
 
     

@@ -1,24 +1,3 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1.- En archivo ".env" cambiar correo y guardarlo en la variable GMAIL_USERNAME.
+2.- En archivo "-env" cambiar contraseña (se debe generar una contraseña de app por medio de configuraciones de Gmail y guardarlo en la variable GMAIL_PASSWORD).
+3.- Cambiar imagen del logo por el logo que corresponde (SE DEBE DEJAR EL MISMO NOMBRE).

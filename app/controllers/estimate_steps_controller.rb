@@ -23,18 +23,12 @@ class EstimateStepsController < ApplicationController
     @estimate_form = current_estimate
     @estimate_form.update(estimate_params)
     redirect_to_finish_wizard
-    # save_path = Rails.root.join('public/pdfs', "cotizacion_#{@estimate_form.id}.pdf")
-    # pdf = WickedPdf.new.pdf_from_string(
-    #   render_to_string(
-    #     :template =>'estimates/estimate_pdf.html.erb',
-    #     enncoding: 'UTF-8',
-    #     page_size: 'A4',
-    #   )
-    # )
-    # File.open(save_path, 'wb') do |file|
-    #   file << pdf
-    # end
-    EstimateMailer.with(estimate: @estimate_form).send_estimate_email.deliver_later
+    @estimate_form.update(estimate_number: DateTime.now.strftime('%Y%m%d%H%M%S'))
+    if @estimate_form.plan_id.present?
+      EstimateMailer.with(estimate: @estimate_form).send_estimate_email.deliver_later 
+    else
+      EstimateMailer.with(estimate: @estimate_form).send_estimate_email_repatriacion.deliver_later 
+    end
   end
 
 
@@ -46,11 +40,11 @@ class EstimateStepsController < ApplicationController
   end
 
   def redirect_to_finish_wizard
-    redirect_to root_url, notice: "¡Tu cotización ha sido creada, próximamente llegará un email con los detalles!." 
+    redirect_to root_url, notice: "¡Tu cotización ha sido creada, próximamente llegará un email con los detalles!" 
   end
 
   def estimate_params
-    params.require(:estimate).permit(:service_id, :plan_id, :client_name, :client_lastname, :client_phone, :client_email, :is_velatorio, :commune_id, :destino_repatriacion)
+    params.require(:estimate).permit(:service_id, :plan_id, :client_name, :client_lastname, :client_phone, :client_email, :is_velatorio, :commune_id, :destino_repatriacion, :estimate_number)
   end
 
 end
