@@ -58,7 +58,7 @@ class EstimateMailer < ApplicationMailer
     end
     
     attachments['consulta.pdf'] = File.read(save_path)
-    mail( :to => 'angeljcampo@gmail.com',
+    mail( :to => 'angeljcampo@gmail.com', #CAMBIAR por correo de la funeraria
     :subject => "Consulta #{@estimate.client_name} #{@estimate.client_lastname}" )
 
     File.delete(save_path) if File.exist?(save_path)
