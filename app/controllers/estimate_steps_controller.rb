@@ -23,7 +23,7 @@ class EstimateStepsController < ApplicationController
     @estimate_form = current_estimate
     @estimate_form.update(estimate_params)
     redirect_to_finish_wizard
-    @estimate_form.update(estimate_number: DateTime.now.strftime('%Y%m%d%H%M%S'))
+    @estimate_form.update(estimate_number: DateTime.now.strftime('%Y%m%d%H%M%S'), submit: true)
     if @estimate_form.plan_id.present?
       EstimateMailer.with(estimate: @estimate_form).send_estimate_email.deliver_later 
     else
@@ -40,11 +40,12 @@ class EstimateStepsController < ApplicationController
   end
 
   def redirect_to_finish_wizard
-    redirect_to root_url, notice: "¡Tu cotización ha sido creada, próximamente llegará un email con los detalles!" 
+    notice_msg = @estimate_form.destino_repatriacion.present? ? "¡Tu cotización ha sido creada!, próximamente un ejecutivo se pondrá en contacto." : "¡Tu cotización ha sido creada!, próximamente llegará un email con los detalles." 
+    redirect_to root_url, notice: notice_msg
   end
 
   def estimate_params
-    params.require(:estimate).permit(:service_id, :plan_id, :client_name, :client_lastname, :client_phone, :client_email, :is_velatorio, :commune_id, :destino_repatriacion, :estimate_number)
+    params.require(:estimate).permit(:service_id, :plan_id, :client_name, :client_lastname, :client_phone, :client_email, :is_velatorio, :commune_id, :destino_repatriacion, :estimate_number, :submit)
   end
 
 end

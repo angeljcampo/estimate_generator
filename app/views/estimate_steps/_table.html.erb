@@ -1,460 +1,437 @@
-<table class="table table-light box-shadow">
-  <thead>
-    <tr>
-      <th scope="col">Seleccionar</th>
-      <th scope="col" class="text-center text-secondary"><%=@plans[0].name %></th>
-      <th scope="col" class="text-center text-secondary"><%=@plans[1].name%> <br><small class="text-success">Opción más elegida</small></th>
-      <th scope="col" class="text-center text-secondary"><%=@plans[2].name%></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">Cofre</th>
-      <td class="text-center text-secondary"><%=link_to "#", "data-toggle": "modal", "data-target": "#exampleModal1" do%>
-        <span><%=@plans[0].cofre%></span>
-        <%end%>
-        <%= render partial: "modal_cofre", locals: {cofre_name: @plans[0].cofre}%>
-      </td>
+<div class="main-table mx-auto ">  
+  <table class="table table-light box-shadow main-table ">
+    <thead>
+      <tr>
+        <th scope="col">Seleccionar</th>
+        <th scope="col" class="text-center text-secondary"><%=@plans[0].name %></th>
+        <th scope="col" class="text-center text-secondary"><%=@plans[1].name%> <br><small class="text-success">Opción más elegida</small></th>
+        <th scope="col" class="text-center text-secondary"><%=@plans[2].name%></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Cofre</th>
+        <td class="text-center text-secondary"><%=link_to "#", "data-toggle": "modal", "data-target": "#exampleModal1" do%>
+          <span><%=@plans[0].cofre%></span>
+          <%end%>
+          <%= render partial: "modal_cofre", locals: {cofre_name: "valparaiso"}%>
+        </td>
 
-      <td class="text-center text-secondary"><%=link_to "#", "data-toggle": "modal", "data-target": "#exampleModal1" do%>
-        <span><%=@plans[1].cofre%></span>
-        <%end%>
-        <%= render partial: "modal_cofre", locals: {cofre_name: @plans[1].cofre}%>
-      </td>
+        <td class="text-center text-secondary"><%=link_to "#", "data-toggle": "modal", "data-target": "#exampleModal1" do%>
+          <span><%=@plans[1].cofre%></span>
+          <%end%>
+          <%= render partial: "modal_cofre", locals: {cofre_name: "coyhaique"}%>
+        </td>
 
-      <td class="text-center text-secondary"><%=link_to "#", "data-toggle": "modal", "data-target": "#exampleModal1" do%>
-        <span><%=@plans[2].cofre%></span>
-        <%end%>
-        <%= render partial: "modal_cofre", locals: {cofre_name: @plans[2].cofre}%>
-      </td>
-    </tr>
-    <tr>
-      <th>Capilla</th>
-      <td class="text-center text-secondary"><%=@plans[0].capilla %></td>
-      <td class="text-center text-secondary"><%=@plans[1].capilla %></td>
-      <td class="text-center text-secondary"><%=@plans[2].capilla %></td>
-    </tr>
-    <tr>
-      <th>Cruz</th>
-      <td class="text-center text-secondary">
-        <% if @plans[0].cruz == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[1].cruz == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[2].cruz == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-    </tr>
-    <tr>
-      <th>Sala Velatoria</th>
-      <td class="text-center text-secondary">
-        <% if @plans[0].sala_velatoria == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[1].sala_velatoria == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[2].sala_velatoria == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-    </tr>
-    <tr>
-      <th>Flores</th>
-      <td class="text-center text-secondary">
-        <% if @plans[0].flores == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[1].flores == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[2].flores == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-    </tr>
-    <tr>
-      <th>Libro de Condolencias</th>
-      <td class="text-center text-secondary">
-        <% if @plans[0].libro_de_condolencias == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[1].libro_de_condolencias == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[2].libro_de_condolencias == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-    </tr>
-    <tr>
-      <th>Tarjeta de Condolencias</th>
-      <td class="text-center text-secondary">
-        <% if @plans[0].tarjeta_de_condolencias == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[1].tarjeta_de_condolencias == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[2].tarjeta_de_condolencias == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-    </tr>
+        <td class="text-center text-secondary"><%=link_to "#", "data-toggle": "modal", "data-target": "#exampleModal1" do%>
+          <span><%=@plans[2].cofre%></span>
+          <%end%>
+          <%= render partial: "modal_cofre", locals: {cofre_name: "torres_paine"}%>
+        </td>
+      </tr>
+      <tr>
+        <th>Capilla</th>
+        <td class="text-center text-secondary"><%=@plans[0].capilla %></td>
+        <td class="text-center text-secondary"><%=@plans[1].capilla %></td>
+        <td class="text-center text-secondary"><%=@plans[2].capilla %></td>
+      </tr>
+      <tr>
+        <th>Cruz</th>
+        <td class="text-center text-secondary">
+          <% if @plans[0].cruz == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[1].cruz == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[2].cruz == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <th>Sala Velatoria</th>
+        <td class="text-center text-secondary">
+          <% if @plans[0].sala_velatoria == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[1].sala_velatoria == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[2].sala_velatoria == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <th>Flores</th>
+        <td class="text-center text-secondary">
+          <% if @plans[0].flores == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[1].flores == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[2].flores == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <th>Libro de Condolencias</th>
+        <td class="text-center text-secondary">
+          <% if @plans[0].libro_de_condolencias == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[1].libro_de_condolencias == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[2].libro_de_condolencias == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <th>Tarjeta de Condolencias</th>
+        <td class="text-center text-secondary">
+          <% if @plans[0].tarjeta_de_condolencias == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[1].tarjeta_de_condolencias == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[2].tarjeta_de_condolencias == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+      </tr>
 
-    <tr>
-      <th>Cubre Urnas</th>
-      <td class="text-center text-secondary"><%=@plans[0].cubre_urnas %></td>
-      <td class="text-center text-secondary"><%=@plans[1].cubre_urnas %></td>
-      <td class="text-center text-secondary"><%=@plans[2].cubre_urnas %></td>
-    </tr>
-    
-    <tr>
-      <th>Pie de Urnas</th>
-      <td class="text-center text-secondary">
-        <% if @plans[0].pie_de_urnas == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[1].pie_de_urnas == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[2].pie_de_urnas == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-    </tr>
-
-    <tr>
-      <th>Medico</th>
-      <td class="text-center text-secondary">
-        <% if @plans[0].medico == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[1].medico == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[2].medico == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-    </tr>
-
-    <tr>
-      <th>Inscripcion Registro Civil</th>
-      <td class="text-center text-secondary">
-        <% if @plans[0].inscripcion_registro_civil == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[1].inscripcion_registro_civil == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[2].inscripcion_registro_civil == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-    </tr>
-
-    <tr>
-      <th>Tramites Legales</th>
-      <td class="text-center text-secondary">
-        <% if @plans[0].tramites_legales == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[1].tramites_legales == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[2].tramites_legales == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-    </tr>
-
-    <tr>
-      <th>Carroza Panoramica</th>
-      <td class="text-center text-secondary"><%=@plans[0].carroza_panoramica %></td>
-      <td class="text-center text-secondary"><%=@plans[1].carroza_panoramica %></td>
-      <td class="text-center text-secondary"><%=@plans[2].carroza_panoramica %></td>
-    </tr>
-
-    <tr>
-      <th>Van de Acompañamiento</th>
-      <td class="text-center text-secondary"><%=@plans[0].van_de_acompanamiento %></td>
-      <td class="text-center text-secondary"><%=@plans[1].van_de_acompanamiento %></td>
-      <td class="text-center text-secondary"><%=@plans[2].van_de_acompanamiento %></td>
-    </tr>
-    <tr>
-      <th>Cinta de Identificacion</th>
-      <td class="text-center text-secondary">
-        <% if @plans[0].cinta_de_identificacion == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[1].cinta_de_identificacion == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[2].cinta_de_identificacion == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-    </tr>
-
-    <tr>
-      <th>Cafeteria</th>
-      <td class="text-center text-secondary"><%=@plans[0].cafeteria %></td>
-      <td class="text-center text-secondary"><%=@plans[1].cafeteria %></td>
-      <td class="text-center text-secondary"><%=@plans[2].cafeteria %></td>
-    </tr>
-
-    <tr>
-      <th>Obituario Virtual</th>
-      <td class="text-center text-secondary">
-        <% if @plans[0].obituario_virtual == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[1].obituario_virtual == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[2].obituario_virtual == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-    </tr>
-
-    <tr>
-      <th>Obituario Mercucio</th>
-      <td class="text-center text-secondary">
-        <% if @plans[0].obituario_mercucio == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[1].obituario_mercucio == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[2].obituario_mercucio == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-    </tr>
-
-    <tr>
-      <th>Homenaje Presencial</th>
-      <td class="text-center text-secondary">
-        <% if @plans[0].homenaje_presencial == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[1].homenaje_presencial == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[2].homenaje_presencial == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-    </tr>
-
-    <tr>
-      <th>Video de Homenaje</th>
-      <td class="text-center text-secondary">
-        <% if @plans[0].video_de_homenaje == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[1].video_de_homenaje == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-      <td class="text-center text-secondary">
-        <% if @plans[2].video_de_homenaje == true %>
-          <i class="far fa-check-circle fa-2x main-green"></i>
-        <% else %>
-          <i class="far fa-times-circle fa-2x text-danger"></i>
-        <% end %>
-      </td>
-    </tr>
-
-    <tr>
-      <th>Tipo de Anfora</th>
-      <td class="text-center text-secondary"><%=@plans[0].tipo_de_anfora %></td>
-      <td class="text-center text-secondary"><%=@plans[1].tipo_de_anfora %></td>
-      <td class="text-center text-secondary"><%=@plans[2].tipo_de_anfora %></td>
+      <tr>
+        <th>Cubre Urnas</th>
+        <td class="text-center text-secondary"><%=@plans[0].cubre_urnas %></td>
+        <td class="text-center text-secondary"><%=@plans[1].cubre_urnas %></td>
+        <td class="text-center text-secondary"><%=@plans[2].cubre_urnas %></td>
+      </tr>
       
-    </tr>
+      <tr>
+        <th>Pie de Urnas</th>
+        <td class="text-center text-secondary">
+          <% if @plans[0].pie_de_urnas == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[1].pie_de_urnas == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[2].pie_de_urnas == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+      </tr>
 
-    <tr>
-      <th>Precio</th>
-      <td class="text-center text-secondary"><%= number_to_currency(@plans[0].precio, separator: ",", delimiter: "") %></td>
-      <td class="text-center text-secondary"><%= number_to_currency(@plans[1].precio, separator: ",", delimiter: "") %></td>
-      <td class="text-center text-secondary"><%= number_to_currency(@plans[2].precio, separator: ",", delimiter: "") %></td>
-    </tr>
+      <tr>
+        <th>Medico</th>
+        <td class="text-center text-secondary">
+          <% if @plans[0].medico == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[1].medico == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[2].medico == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+      </tr>
 
-    
-    <tr>
-      <th></th>
+      <tr>
+        <th>Inscripcion Registro Civil</th>
+        <td class="text-center text-secondary">
+          <% if @plans[0].inscripcion_registro_civil == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[1].inscripcion_registro_civil == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[2].inscripcion_registro_civil == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+      </tr>
 
-      <td class="text-center text-secondary"><%= link_to 'Seleccionar', next_wizard_path(plan_id: @plans[0].id,step: 3), :class => 'btn bg-main-green text-light select-plan',estimate_id: @estimate_form.id %></td>
-      <td class="text-center text-secondary"><%= link_to 'Seleccionar', next_wizard_path(plan_id: @plans[1].id,step: 3), :class => 'btn bg-main-green text-light select-plan', estimate_id: @estimate_form.id %></td>
-      <td class="text-center text-secondary"><%= link_to 'Seleccionar', next_wizard_path(plan_id: @plans[2].id,step: 3), :class => 'btn bg-main-green text-light select-plan', estimate_id: @estimate_form.id %></td>
-    </tr>
-  </tbody>
-</table>
+      <tr>
+        <th>Tramites Legales</th>
+        <td class="text-center text-secondary">
+          <% if @plans[0].tramites_legales == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[1].tramites_legales == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[2].tramites_legales == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+      </tr>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
+      <tr>
+        <th>Carroza Panoramica</th>
+        <td class="text-center text-secondary"><%=@plans[0].carroza_panoramica %></td>
+        <td class="text-center text-secondary"><%=@plans[1].carroza_panoramica %></td>
+        <td class="text-center text-secondary"><%=@plans[2].carroza_panoramica %></td>
+      </tr>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
+      <tr>
+        <th>Van de Acompañamiento</th>
+        <td class="text-center text-secondary"><%=@plans[0].van_de_acompanamiento %></td>
+        <td class="text-center text-secondary"><%=@plans[1].van_de_acompanamiento %></td>
+        <td class="text-center text-secondary"><%=@plans[2].van_de_acompanamiento %></td>
+      </tr>
+      <tr>
+        <th>Cinta de Identificacion</th>
+        <td class="text-center text-secondary">
+          <% if @plans[0].cinta_de_identificacion == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[1].cinta_de_identificacion == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[2].cinta_de_identificacion == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+      </tr>
+
+      <tr>
+        <th>Cafeteria</th>
+        <td class="text-center text-secondary"><%=@plans[0].cafeteria %></td>
+        <td class="text-center text-secondary"><%=@plans[1].cafeteria %></td>
+        <td class="text-center text-secondary"><%=@plans[2].cafeteria %></td>
+      </tr>
+
+      <tr>
+        <th>Obituario Virtual</th>
+        <td class="text-center text-secondary">
+          <% if @plans[0].obituario_virtual == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[1].obituario_virtual == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[2].obituario_virtual == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+      </tr>
+
+      <tr>
+        <th>Obituario Mercucio</th>
+        <td class="text-center text-secondary">
+          <% if @plans[0].obituario_mercucio == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[1].obituario_mercucio == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[2].obituario_mercucio == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+      </tr>
+
+      <tr>
+        <th>Homenaje Presencial</th>
+        <td class="text-center text-secondary">
+          <% if @plans[0].homenaje_presencial == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[1].homenaje_presencial == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[2].homenaje_presencial == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+      </tr>
+
+      <tr>
+        <th>Video de Homenaje</th>
+        <td class="text-center text-secondary">
+          <% if @plans[0].video_de_homenaje == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[1].video_de_homenaje == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+        <td class="text-center text-secondary">
+          <% if @plans[2].video_de_homenaje == true %>
+            <i class="far fa-check-circle fa-2x main-green"></i>
+          <% else %>
+            <i class="far fa-times-circle fa-2x text-danger"></i>
+          <% end %>
+        </td>
+      </tr>
+
+      <tr>
+        <th>Tipo de Anfora</th>
+        <td class="text-center text-secondary"><%=@plans[0].tipo_de_anfora %></td>
+        <td class="text-center text-secondary"><%=@plans[1].tipo_de_anfora %></td>
+        <td class="text-center text-secondary"><%=@plans[2].tipo_de_anfora %></td>
+        
+      </tr>
+
+      <tr>
+        <th>Precio</th>
+        <td class="text-center text-secondary"><%= number_to_currency(@plans[0].precio, separator: ",", delimiter: ".", precision: 0) %></td>
+        <td class="text-center text-secondary"><%= number_to_currency(@plans[1].precio, separator: ",", delimiter: ".", precision: 0) %></td>
+        <td class="text-center text-secondary"><%= number_to_currency(@plans[2].precio, separator: ",", delimiter: ".", precision: 0) %></td>
+      </tr>
+
+      
+      <tr>
+        <th></th>
+
+        <td class="text-center text-secondary"><%= link_to 'Seleccionar', next_wizard_path(plan_id: @plans[0].id,step: 3), :class => 'btn bg-main-green text-light select-plan',estimate_id: @estimate_form.id %></td>
+        <td class="text-center text-secondary"><%= link_to 'Seleccionar', next_wizard_path(plan_id: @plans[1].id,step: 3), :class => 'btn bg-main-green text-light select-plan', estimate_id: @estimate_form.id %></td>
+        <td class="text-center text-secondary"><%= link_to 'Seleccionar', next_wizard_path(plan_id: @plans[2].id,step: 3), :class => 'btn bg-main-green text-light select-plan', estimate_id: @estimate_form.id %></td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+

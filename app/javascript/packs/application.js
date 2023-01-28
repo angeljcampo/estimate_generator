@@ -16,22 +16,3 @@ Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-function hideAlert(){
-  let alertEstimate = document.getElementById("alert-estimate");
-  if (alertEstimate.display === 'block') {
-		alertEstimate.display === 'none'
-	}
-}
-
-
-document.addEventListener('DOMContentLoaded', function () {
-  
-  if (document.getElementById("alert-estimate")){
-    let alertEstimate = document.getElementById("alert-estimate");
-    setTimeout(() => {
-      alertEstimate.display === 'none'
-    }, 3000);
-  }
-  
-
-}, false);

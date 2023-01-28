@@ -25,6 +25,6 @@ class EstimatesController < ApplicationController
   private 
 
   def estimate_params
-    params.require(:estimate).permit(:service_id, :plan_id, :client_name, :client_lastname, :client_phone, :client_email, :is_velatorio, :commune_id, :origen_repatriacion, :destino_repatriacion, :estimate_number)
+    params.require(:estimate).permit(:service_id, :plan_id, :client_name, :client_lastname, :client_phone, :client_email, :is_velatorio, :commune_id, :origen_repatriacion, :destino_repatriacion, :estimate_number, :submit)
   end
 end

@@ -12,9 +12,9 @@
       <%  image = 'other_options.jpg'%>
     <% end %>
 
-    <div class="card border-white text-center m-2">
+    <div class="card border-white text-center m-3">
       <%= link_to new_estimate_path(service_id: service.id, service_name: service.name)do %>
-        <%= image_tag(image, class: 'card-img-top') %>
+        <%= image_tag(image, class: 'card-img-top mt-2') %>
       <% end %>
       <div class="card-body">
         <h5 class="card-title text-secondary"><%= service.name %></h5>
@@ -23,3 +23,9 @@
   <% end %>
   
 </div>
+
+<script>
+  setTimeout(() => {
+    $(".alert-info").hide();
+  }, 3000);
+</script>
