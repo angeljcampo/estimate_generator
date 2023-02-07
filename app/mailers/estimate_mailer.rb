@@ -18,7 +18,7 @@ class EstimateMailer < ApplicationMailer
     
     attachments['presupuesto.pdf'] = File.read(save_path)
     mail( :to => @estimate.client_email,
-    :bcc => 'angeljcampo@gmail.com',
+    :bcc => 'contacto@funerariaim.cl',
     :subject => '¡Gracias por cotizar con Funeraria Ivan Martinez!' )
 
     File.delete(save_path) if File.exist?(save_path)
@@ -38,7 +38,7 @@ class EstimateMailer < ApplicationMailer
     end
     
     attachments['repatriacion.pdf'] = File.read(save_path)
-    mail( :to => 'angeljcampo@gmail.com', #CAMBIAR este correo por el de la funeria
+    mail( :to => 'contacto@funerariaim.cl',
     :subject => "Cotizacion #{@estimate.client_name} #{@estimate.client_lastname} - Repatriación" )
 
     File.delete(save_path) if File.exist?(save_path)
@@ -59,7 +59,7 @@ class EstimateMailer < ApplicationMailer
     end
     
     attachments['consulta.pdf'] = File.read(save_path)
-    mail( :to => 'angeljcampo@gmail.com', #CAMBIAR por correo de la funeraria
+    mail( :to => 'contacto@funerariaim.cl',
     :subject => "Consulta #{@estimate.client_name} #{@estimate.client_lastname}" )
 
     File.delete(save_path) if File.exist?(save_path)
