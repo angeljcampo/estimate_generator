@@ -15,12 +15,8 @@
   <%= form_for @estimate_form, url: wizard_path do |f| %>
     <%= hidden_field_tag :estimate_id, @estimate_form.id %>
     <p class="text-secondary">Para un servicio como el que solicitas disponemos de las siguientes opciones. Selecciona la que más se ajuste a tu necesidad.</p>
-    <% if @estimate_form.is_velatorio == true %>
     <div class="mb-3">
       <%= render 'table' %>
-      <% else %>
-      <%= render 'basic_plan_table' %>
-      <% end  %>
       <div class="text-center py-3 ">
         <%= link_to 'Volver', new_estimate_path(service_id: @estimate_form.service_id, service_name: @estimate_form.service.name ), :class => 'btn bg-main-green text-light px-20' %>
       </div>
