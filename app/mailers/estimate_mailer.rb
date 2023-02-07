@@ -18,6 +18,7 @@ class EstimateMailer < ApplicationMailer
     
     attachments['presupuesto.pdf'] = File.read(save_path)
     mail( :to => @estimate.client_email,
+    :bcc => 'angeljcampo@gmail.com',
     :subject => '¡Gracias por cotizar con Funeraria Ivan Martinez!' )
 
     File.delete(save_path) if File.exist?(save_path)
