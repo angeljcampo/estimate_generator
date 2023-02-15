@@ -47,6 +47,7 @@
         </div>
       </div>
       <div class="text-center">
+        <%= recaptcha_tags %>
         <%= link_to 'Volver', new_estimate_path(service_id: @estimate_form.service_id, service_name: @estimate_form.service.name ), :class => 'btn bg-main-green text-light px-20' %>
         <%= f.submit 'Solicitar presupuesto', :class => 'btn bg-main-green text-light px-20 submit-form',disabled: true %>
       </div>
@@ -109,4 +110,7 @@
     }
   })
 
+  document.getElementById("recaptcha-anchor").addEventListener("change",function(){
+    alert("hola")
+  })
 </script>
